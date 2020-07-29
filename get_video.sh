@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $# -lt 2 ]
+if [ $# -lt 1 ]
 then
     echo "Usage: script.sh <video_number> [Video name]"
 else
