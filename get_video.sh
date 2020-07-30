@@ -11,14 +11,13 @@ else
     token=$(echo -n ${at_json} | jq '.token')
     token_g1=$(echo -n $token | tr -d '\\')
     token_re=${token_g1:1:${#token_g1}-2}
-    token_g2=$(urlencode ${token_re})
 
     #Parse the signature
     sig=$(echo -n ${at_json} | jq '.sig')
     sig_re=${sig:1:${#sig}-2}
 
     #Obtain the urls that tell us where the video is stored
-    ttvn=$(curl -sf "https://usher.ttvnw.net/vod/$1.m3u8?allow_source=true&sig=$sig_re&token=$token_g2" | grep -v '#' )
+    ttvn=$(curl -sfG --data-urlencode "allow_source=true" --data-urlencode "sig=$sig_re" --data-urlencode "token=$token_re" "https://usher.ttvnw.net/vod/$1.m3u8" | grep -v '#' )
     #Parse only the url
     ttvn_u=$(echo -n ${ttvn} | awk '{print $1}')
 
