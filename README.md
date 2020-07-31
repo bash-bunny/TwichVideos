@@ -8,8 +8,14 @@ The conversion and putting all together depends on the length of the video, and 
 ### Requirements
 It needs the following packages to work.
 
+**Debian:**
 ```
-apt install curl gridsite-clients jq mencoder
+apt install curl jq mencoder
+```
+
+**Arch:**
+```
+pacman -S curl jq mencoder
 ```
 
 ### Usage:
