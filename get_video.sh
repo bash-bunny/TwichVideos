@@ -39,7 +39,7 @@ else
     #Put together all the video parts
     if [ -z "$2" ]
     then
-        mencoder -ovc x264 -oac pcm -o Video.mpeg $chunked
+        mencoder -ovc x264 -oac pcm -o Video.avi $chunked
     else
         mencoder -ovc x264 -oac pcm -o $2 $chunked
     fi
