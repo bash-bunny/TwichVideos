@@ -23,4 +23,4 @@ pacman -S curl jq mencoder
 ./get_video.sh <video_number> [Video_name]
 ```
  You need to provide a video number (just the end of an url on any video on twich tv).
- And optional a name for the video to store, if not provide a name it would store as Video.mpeg
+ And optional a name for the video to store, if not provide a name it would store as Video.avi
